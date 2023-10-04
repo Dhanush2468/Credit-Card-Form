@@ -10,23 +10,23 @@
       <div class="card-item__cover">
         <img
           v-if="currentCardBackground"
-          :src="currentCardBackground"
+          src="@/assets/images/24.jpeg"
           class="card-item__bg"
         />
       </div>
       <div class="card-item__wrapper">
         <div class="card-item__top">
           <img
-            src="https://w7.pngwing.com/pngs/460/694/png-transparent-iphone-computer-icons-integrated-circuits-chips-subscriber-identity-module-sim-cards-electronics-text-rectangle-thumbnail.png"
+          src="@/assets/images/chip.png"
             class="card-item__chip"
           />
           <div class="card-item__type">
             <transition name="slide-fade-up">
               <img
-                :src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + cardType + '.png'"
+                :src="getCardImage(cardType)"
                 v-if="cardType"
                 :key="cardType"
-                alt
+                alt=""
                 class="card-item__typeImg"
               />
             </transition>
@@ -104,7 +104,7 @@
         </div>
         <div class="card-item__type">
           <img
-            :src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + cardType + '.png'"
+            :src="getCardImage(cardType)"
             v-if="cardType"
             class="card-item__typeImg"
           />
